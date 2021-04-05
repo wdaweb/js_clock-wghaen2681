@@ -6,7 +6,6 @@
 若使用 GitHub 網頁進行 commit 會依次數扣分
 
 
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,57 +14,71 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
     <style>
-        #box {
-            width: 100vh;
-            height: 100vh;
-            background: grey;
+        html,body {
+            clear: both; 
         }
 
+        html {
+            position: relative; 
+        }
 
-
+        #bg-img {
+            width: 1200px;
+            height: 700px;
+            position: absolute; 
+            left: 50vw; 
+            top: 50vh; 
+            transform: translate(-50%, -50%); 
+            margin: auto; 
+            background-image: url(./atomicbomb.jpeg);
+            background-repeat: no-repeat;
+        }
 
         #clock {
-            width: 200px;
-            height: 200px;
-            background: blue;
-            border-radius: 50%;
-            margin: auto;
-            position: relative;
+            width: 299px; 
+            height: 450px; 
+            position: absolute; 
+            left: 50vw; 
+            top: 50vh; 
+            transform: translate(-50%, -60%); 
+            margin: auto; 
+            background-image: url(./homework_clock3拷貝.png);
+            background-repeat: no-repeat;
         }
 
         #hour {
-            width: 20%;
-            height: 5px;
-            border-radius: 5px;
-            background: green;
-            position: absolute;
-            top: calc(50% - 2px);
-            left: 50%;
-            transform-origin: left center;
+            width: 12px; 
+            height: 57px; 
+            position: absolute; 
+            left: 143.3px; 
+            top: 275.3px; 
+            background-image: url(./時針物件2.png); 
+            background-repeat: no-repeat;
+            transform-origin: center bottom;
         }
 
         #minute {
-            width: 40%;
-            height: 3px;
-            border-radius: 5px;
-            background: orange;
-            position: absolute;
-            top: calc(50% - 1.5px);
-            left: 50%;
-            transform-origin: left center;
+            width: 10px; 
+            height: 71px; 
+            position: absolute; 
+            left: 143.5px; 
+            top: 260px; 
+            background-image: url(./分針物件2.png); 
+            background-repeat: no-repeat;
+            transform-origin: center bottom;
         }
 
         #second {
-            width: 45%;
-            height: 2px;
-            border-radius: 5px;
-            background: pink;
-            position: absolute;
-            top: calc(50% - 1px);
-            left: 50%;
-            transform-origin: left center;
-            ];
+            width: 12px; 
+            height: 57px; 
+            position: absolute; 
+            left: 146.85px; 
+            top: 272.3px; 
+            background-image: url(./秒針物件2.png); 
+            background-repeat: no-repeat;
+            transform-origin: center bottom;
         }
     </style>
 
@@ -74,24 +87,22 @@
 </head>
 
 <body>
-    <div id="box">
-        <div id="clock">
-            <div id="hour"></div>
-            <div id="minute"></div>
-            <div id="second"></div>
-        </div>
+    <div id="bg-img"></div>
+    <div id="clock">
+        <div id="hour"></div>
+        <div id="minute"></div>
+        <div id="second"></div>
     </div>
-
-    <script>
+<script>
         const hour = document.getElementById('hour')
         const minute = document.getElementById('minute')
         const second = document.getElementById('second')
 
         const update = () => {
             const now = new Date()
-            hour.style.transform = `rotate(${now.getHours() * 30 - 90}deg)`
-            minute.style.transform = `rotate(${now.getMinutes() * 6 - 90}deg)`
-            second.style.transform = `rotate(${now.getSeconds() * 6 - 90}deg)`
+            hour.style.transform = `rotate(${now.getHours() * 30 }deg)`
+            minute.style.transform = `rotate(${now.getMinutes() * 6}deg)`
+            second.style.transform = `rotate(${now.getSeconds() * 6}deg)`
         }
 
 
